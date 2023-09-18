@@ -1,6 +1,6 @@
 # flutter_riverpod_clean_architecture
 
-A new Flutter project.
+Flutter project for implementing Clean Architecture with Riverpod and [JSONPlaceholder](https://jsonplaceholder.typicode.com/) 
 
 ## Getting Started
 
