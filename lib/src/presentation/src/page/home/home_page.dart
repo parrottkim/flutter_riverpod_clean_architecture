@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_riverpod_clean_architecture/src/presentation/src/controller/controller.dart';
-import 'package:flutter_riverpod_clean_architecture/src/presentation/src/page/detail_page.dart';
+import 'package:flutter_riverpod_clean_architecture/src/presentation/src/page/detail/detail_page.dart';
 
 class HomePage extends ConsumerWidget {
   const HomePage({super.key});
@@ -15,12 +15,12 @@ class HomePage extends ConsumerWidget {
         ),
         body: switch (state) {
           AsyncData(:final value) => _buildList(value),
-          AsyncError(:final error) => Text('Error: $error'),
-          _ => const Center(child: CircularProgressIndicator()),
+          AsyncError() => _error(),
+          _ => _loading(),
         });
   }
 
-  _buildList(PostState state) {
+  Widget _buildList(PostState state) {
     return Consumer(
       builder: (context, ref, child) =>
           NotificationListener<ScrollNotification>(
@@ -88,11 +88,11 @@ class HomePage extends ConsumerWidget {
     );
   }
 
-  _loading() {
+  Widget _loading() {
     return const Center(child: CircularProgressIndicator());
   }
 
-  _error() {
+  Widget _error() {
     return const Center(
       child: Column(
         mainAxisSize: MainAxisSize.min,

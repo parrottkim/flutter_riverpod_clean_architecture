@@ -6,6 +6,22 @@ part of 'repository.dart';
 // RiverpodGenerator
 // **************************************************************************
 
+String _$commentRepositoryHash() => r'd0e88c9fb90d1dc4aeb652e0badf56879f0fa7bb';
+
+/// See also [commentRepository].
+@ProviderFor(commentRepository)
+final commentRepositoryProvider =
+    AutoDisposeProvider<CommentRepository>.internal(
+  commentRepository,
+  name: r'commentRepositoryProvider',
+  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
+      ? null
+      : _$commentRepositoryHash,
+  dependencies: null,
+  allTransitiveDependencies: null,
+);
+
+typedef CommentRepositoryRef = AutoDisposeProviderRef<CommentRepository>;
 String _$postRepositoryHash() => r'47c359c05c633dd9a4d4394668df39fe70f8ec1c';
 
 /// See also [postRepository].

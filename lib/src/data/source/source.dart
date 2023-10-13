@@ -6,6 +6,9 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 part 'source.g.dart';
 
+part 'comment/comment_data_source.dart';
+part 'comment/comment_data_source_impl.dart';
+part 'comment/comment_service.dart';
 part 'post/post_data_source.dart';
 part 'post/post_data_source_impl.dart';
 part 'post/post_service.dart';

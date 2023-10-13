@@ -6,7 +6,7 @@ part of 'controller.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$detailControllerHash() => r'bb97c3a3a096243c8dd9ac114f45b5d7163501cd';
+String _$commentControllerHash() => r'20213068c8e652c25617e0da000327ff913c2c9e';
 
 /// Copied from Dart SDK
 class _SystemHash {
@@ -29,13 +29,158 @@ class _SystemHash {
   }
 }
 
+abstract class _$CommentController
+    extends BuildlessAutoDisposeAsyncNotifier<CommentState> {
+  late final int postId;
+
+  FutureOr<CommentState> build({
+    required int postId,
+  });
+}
+
+/// See also [CommentController].
+@ProviderFor(CommentController)
+const commentControllerProvider = CommentControllerFamily();
+
+/// See also [CommentController].
+class CommentControllerFamily extends Family<AsyncValue<CommentState>> {
+  /// See also [CommentController].
+  const CommentControllerFamily();
+
+  /// See also [CommentController].
+  CommentControllerProvider call({
+    required int postId,
+  }) {
+    return CommentControllerProvider(
+      postId: postId,
+    );
+  }
+
+  @override
+  CommentControllerProvider getProviderOverride(
+    covariant CommentControllerProvider provider,
+  ) {
+    return call(
+      postId: provider.postId,
+    );
+  }
+
+  static const Iterable<ProviderOrFamily>? _dependencies = null;
+
+  @override
+  Iterable<ProviderOrFamily>? get dependencies => _dependencies;
+
+  static const Iterable<ProviderOrFamily>? _allTransitiveDependencies = null;
+
+  @override
+  Iterable<ProviderOrFamily>? get allTransitiveDependencies =>
+      _allTransitiveDependencies;
+
+  @override
+  String? get name => r'commentControllerProvider';
+}
+
+/// See also [CommentController].
+class CommentControllerProvider extends AutoDisposeAsyncNotifierProviderImpl<
+    CommentController, CommentState> {
+  /// See also [CommentController].
+  CommentControllerProvider({
+    required int postId,
+  }) : this._internal(
+          () => CommentController()..postId = postId,
+          from: commentControllerProvider,
+          name: r'commentControllerProvider',
+          debugGetCreateSourceHash:
+              const bool.fromEnvironment('dart.vm.product')
+                  ? null
+                  : _$commentControllerHash,
+          dependencies: CommentControllerFamily._dependencies,
+          allTransitiveDependencies:
+              CommentControllerFamily._allTransitiveDependencies,
+          postId: postId,
+        );
+
+  CommentControllerProvider._internal(
+    super._createNotifier, {
+    required super.name,
+    required super.dependencies,
+    required super.allTransitiveDependencies,
+    required super.debugGetCreateSourceHash,
+    required super.from,
+    required this.postId,
+  }) : super.internal();
+
+  final int postId;
+
+  @override
+  FutureOr<CommentState> runNotifierBuild(
+    covariant CommentController notifier,
+  ) {
+    return notifier.build(
+      postId: postId,
+    );
+  }
+
+  @override
+  Override overrideWith(CommentController Function() create) {
+    return ProviderOverride(
+      origin: this,
+      override: CommentControllerProvider._internal(
+        () => create()..postId = postId,
+        from: from,
+        name: null,
+        dependencies: null,
+        allTransitiveDependencies: null,
+        debugGetCreateSourceHash: null,
+        postId: postId,
+      ),
+    );
+  }
+
+  @override
+  AutoDisposeAsyncNotifierProviderElement<CommentController, CommentState>
+      createElement() {
+    return _CommentControllerProviderElement(this);
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return other is CommentControllerProvider && other.postId == postId;
+  }
+
+  @override
+  int get hashCode {
+    var hash = _SystemHash.combine(0, runtimeType.hashCode);
+    hash = _SystemHash.combine(hash, postId.hashCode);
+
+    return _SystemHash.finish(hash);
+  }
+}
+
+mixin CommentControllerRef
+    on AutoDisposeAsyncNotifierProviderRef<CommentState> {
+  /// The parameter `postId` of this provider.
+  int get postId;
+}
+
+class _CommentControllerProviderElement
+    extends AutoDisposeAsyncNotifierProviderElement<CommentController,
+        CommentState> with CommentControllerRef {
+  _CommentControllerProviderElement(super.provider);
+
+  @override
+  int get postId => (origin as CommentControllerProvider).postId;
+}
+
+String _$detailControllerHash() => r'441dfb4669024cad0348a633a0590b2dfeac729e';
+
 abstract class _$DetailController
     extends BuildlessAutoDisposeAsyncNotifier<DetailState> {
   late final int id;
 
-  FutureOr<DetailState> build(
-    int id,
-  );
+  FutureOr<DetailState> build({
+    required int id,
+  });
 }
 
 /// See also [DetailController].
@@ -48,11 +193,11 @@ class DetailControllerFamily extends Family<AsyncValue<DetailState>> {
   const DetailControllerFamily();
 
   /// See also [DetailController].
-  DetailControllerProvider call(
-    int id,
-  ) {
+  DetailControllerProvider call({
+    required int id,
+  }) {
     return DetailControllerProvider(
-      id,
+      id: id,
     );
   }
 
@@ -61,7 +206,7 @@ class DetailControllerFamily extends Family<AsyncValue<DetailState>> {
     covariant DetailControllerProvider provider,
   ) {
     return call(
-      provider.id,
+      id: provider.id,
     );
   }
 
@@ -84,9 +229,9 @@ class DetailControllerFamily extends Family<AsyncValue<DetailState>> {
 class DetailControllerProvider extends AutoDisposeAsyncNotifierProviderImpl<
     DetailController, DetailState> {
   /// See also [DetailController].
-  DetailControllerProvider(
-    int id,
-  ) : this._internal(
+  DetailControllerProvider({
+    required int id,
+  }) : this._internal(
           () => DetailController()..id = id,
           from: detailControllerProvider,
           name: r'detailControllerProvider',
@@ -117,7 +262,7 @@ class DetailControllerProvider extends AutoDisposeAsyncNotifierProviderImpl<
     covariant DetailController notifier,
   ) {
     return notifier.build(
-      id,
+      id: id,
     );
   }
 

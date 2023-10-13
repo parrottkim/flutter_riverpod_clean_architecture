@@ -15,6 +15,202 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
+mixin _$CommentState {
+  bool get isLoading => throw _privateConstructorUsedError;
+  int get currentIndex => throw _privateConstructorUsedError;
+  List<Comment> get comments => throw _privateConstructorUsedError;
+  bool get hasReachEnd => throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $CommentStateCopyWith<CommentState> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $CommentStateCopyWith<$Res> {
+  factory $CommentStateCopyWith(
+          CommentState value, $Res Function(CommentState) then) =
+      _$CommentStateCopyWithImpl<$Res, CommentState>;
+  @useResult
+  $Res call(
+      {bool isLoading,
+      int currentIndex,
+      List<Comment> comments,
+      bool hasReachEnd});
+}
+
+/// @nodoc
+class _$CommentStateCopyWithImpl<$Res, $Val extends CommentState>
+    implements $CommentStateCopyWith<$Res> {
+  _$CommentStateCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? isLoading = null,
+    Object? currentIndex = null,
+    Object? comments = null,
+    Object? hasReachEnd = null,
+  }) {
+    return _then(_value.copyWith(
+      isLoading: null == isLoading
+          ? _value.isLoading
+          : isLoading // ignore: cast_nullable_to_non_nullable
+              as bool,
+      currentIndex: null == currentIndex
+          ? _value.currentIndex
+          : currentIndex // ignore: cast_nullable_to_non_nullable
+              as int,
+      comments: null == comments
+          ? _value.comments
+          : comments // ignore: cast_nullable_to_non_nullable
+              as List<Comment>,
+      hasReachEnd: null == hasReachEnd
+          ? _value.hasReachEnd
+          : hasReachEnd // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$_CommentStateCopyWith<$Res>
+    implements $CommentStateCopyWith<$Res> {
+  factory _$$_CommentStateCopyWith(
+          _$_CommentState value, $Res Function(_$_CommentState) then) =
+      __$$_CommentStateCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {bool isLoading,
+      int currentIndex,
+      List<Comment> comments,
+      bool hasReachEnd});
+}
+
+/// @nodoc
+class __$$_CommentStateCopyWithImpl<$Res>
+    extends _$CommentStateCopyWithImpl<$Res, _$_CommentState>
+    implements _$$_CommentStateCopyWith<$Res> {
+  __$$_CommentStateCopyWithImpl(
+      _$_CommentState _value, $Res Function(_$_CommentState) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? isLoading = null,
+    Object? currentIndex = null,
+    Object? comments = null,
+    Object? hasReachEnd = null,
+  }) {
+    return _then(_$_CommentState(
+      isLoading: null == isLoading
+          ? _value.isLoading
+          : isLoading // ignore: cast_nullable_to_non_nullable
+              as bool,
+      currentIndex: null == currentIndex
+          ? _value.currentIndex
+          : currentIndex // ignore: cast_nullable_to_non_nullable
+              as int,
+      comments: null == comments
+          ? _value._comments
+          : comments // ignore: cast_nullable_to_non_nullable
+              as List<Comment>,
+      hasReachEnd: null == hasReachEnd
+          ? _value.hasReachEnd
+          : hasReachEnd // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_CommentState implements _CommentState {
+  _$_CommentState(
+      {this.isLoading = false,
+      this.currentIndex = 0,
+      final List<Comment> comments = const [],
+      this.hasReachEnd = false})
+      : _comments = comments;
+
+  @override
+  @JsonKey()
+  final bool isLoading;
+  @override
+  @JsonKey()
+  final int currentIndex;
+  final List<Comment> _comments;
+  @override
+  @JsonKey()
+  List<Comment> get comments {
+    if (_comments is EqualUnmodifiableListView) return _comments;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_comments);
+  }
+
+  @override
+  @JsonKey()
+  final bool hasReachEnd;
+
+  @override
+  String toString() {
+    return 'CommentState(isLoading: $isLoading, currentIndex: $currentIndex, comments: $comments, hasReachEnd: $hasReachEnd)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_CommentState &&
+            (identical(other.isLoading, isLoading) ||
+                other.isLoading == isLoading) &&
+            (identical(other.currentIndex, currentIndex) ||
+                other.currentIndex == currentIndex) &&
+            const DeepCollectionEquality().equals(other._comments, _comments) &&
+            (identical(other.hasReachEnd, hasReachEnd) ||
+                other.hasReachEnd == hasReachEnd));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, isLoading, currentIndex,
+      const DeepCollectionEquality().hash(_comments), hasReachEnd);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_CommentStateCopyWith<_$_CommentState> get copyWith =>
+      __$$_CommentStateCopyWithImpl<_$_CommentState>(this, _$identity);
+}
+
+abstract class _CommentState implements CommentState {
+  factory _CommentState(
+      {final bool isLoading,
+      final int currentIndex,
+      final List<Comment> comments,
+      final bool hasReachEnd}) = _$_CommentState;
+
+  @override
+  bool get isLoading;
+  @override
+  int get currentIndex;
+  @override
+  List<Comment> get comments;
+  @override
+  bool get hasReachEnd;
+  @override
+  @JsonKey(ignore: true)
+  _$$_CommentStateCopyWith<_$_CommentState> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 mixin _$DetailState {
   User get user => throw _privateConstructorUsedError;
   Post get post => throw _privateConstructorUsedError;

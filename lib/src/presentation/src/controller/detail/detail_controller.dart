@@ -3,7 +3,7 @@ part of '../controller.dart';
 @riverpod
 class DetailController extends _$DetailController {
   @override
-  FutureOr<DetailState> build(int id) {
+  FutureOr<DetailState> build({required int id}) {
     return _fetchData(id: id);
   }
 
