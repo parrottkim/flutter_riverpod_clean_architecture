@@ -4,9 +4,14 @@ part of '../source.dart';
 abstract class PostService {
   factory PostService(Dio dio, {String baseUrl}) = _PostService;
 
-  @GET('post')
-  Future<List<Post>> getPost({
+  @GET('posts')
+  Future<List<Post>> getPostList({
     @Query('_start') required int start,
     @Query('_limit') required int limit,
+  });
+
+  @GET('posts/{id}')
+  Future<Post> getPostDetail({
+    @Path('id') required int id,
   });
 }

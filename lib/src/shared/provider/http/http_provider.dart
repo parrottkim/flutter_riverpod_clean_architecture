@@ -8,7 +8,10 @@ Dio http(HttpRef ref) {
     connectTimeout: const Duration(milliseconds: 3000),
     receiveTimeout: const Duration(milliseconds: 3000),
   );
-  return Dio(options)..interceptors.addAll([]);
+  return Dio(options)
+    ..interceptors.addAll([
+      ref.watch(dummyInterceptorProvider),
+    ]);
 }
 
 @riverpod

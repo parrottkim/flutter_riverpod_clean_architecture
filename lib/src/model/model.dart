@@ -4,3 +4,4 @@ part 'model.g.dart';
 part 'model.freezed.dart';
 
 part 'post/post.dart';
+part 'user/user.dart';

@@ -1,5 +1,7 @@
 part of '../source.dart';
 
 abstract class PostDataSource {
-  Future<List<Post>> getPost({required int start, int limit = 20});
+  Future<List<Post>> getPostList({required int start, int limit = 20});
+
+  Future<Post> getPostDetail({required int id});
 }

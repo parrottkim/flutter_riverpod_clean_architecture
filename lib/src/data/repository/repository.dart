@@ -6,3 +6,5 @@ part 'repository.g.dart';
 
 part 'post/post_repository.dart';
 part 'post/post_repository_impl.dart';
+part 'user/user_repository.dart';
+part 'user/user_repository_impl.dart';

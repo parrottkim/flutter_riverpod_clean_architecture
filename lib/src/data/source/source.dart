@@ -9,3 +9,6 @@ part 'source.g.dart';
 part 'post/post_data_source.dart';
 part 'post/post_data_source_impl.dart';
 part 'post/post_service.dart';
+part 'user/user_data_source.dart';
+part 'user/user_data_source_impl.dart';
+part 'user/user_service.dart';
