@@ -6,12 +6,17 @@ class PostRepositoryImpl implements PostRepository {
   final PostDataSource _source;
 
   @override
-  Future<List<Post>> getPostList({required int start, int limit = 20}) =>
-      _source.getPostList(start: start, limit: limit);
+  Future<List<PostEntity>> getPostList(
+      {required int start, int limit = 20}) async {
+    final list = await _source.getPostList(start: start, limit: limit);
+    return list.map((element) => element.toEntity()).toList();
+  }
 
   @override
-  Future<Post> getPostDetail({required int id}) =>
-      _source.getPostDetail(id: id);
+  Future<PostEntity> getPostDetail({required int id}) async {
+    final model = await _source.getPostDetail(id: id);
+    return model.toEntity();
+  }
 }
 
 @riverpod

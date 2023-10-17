@@ -5,13 +5,13 @@ abstract class PostService {
   factory PostService(Dio dio, {String baseUrl}) = _PostService;
 
   @GET('posts')
-  Future<List<Post>> getPostList({
+  Future<List<PostModel>> getPostList({
     @Query('_start') required int start,
     @Query('_limit') required int limit,
   });
 
   @GET('posts/{id}')
-  Future<Post> getPostDetail({
+  Future<PostModel> getPostDetail({
     @Path('id') required int id,
   });
 }

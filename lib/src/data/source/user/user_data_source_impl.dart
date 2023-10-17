@@ -6,7 +6,7 @@ class UserDataSourceImpl implements UserDataSource {
   final UserService _service;
 
   @override
-  Future<User> getUserDetail({required int id}) =>
+  Future<UserModel> getUserDetail({required int id}) =>
       _service.getUserDetail(id: id);
 }
 

@@ -5,7 +5,7 @@ abstract class UserService {
   factory UserService(Dio dio, {String baseUrl}) = _UserService;
 
   @GET('users/{id}')
-  Future<User> getUserDetail({
+  Future<UserModel> getUserDetail({
     @Path('id') required int id,
   });
 }

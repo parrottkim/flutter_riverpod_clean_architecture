@@ -6,7 +6,7 @@ class CommentDataSourceImpl implements CommentDataSource {
   final CommentService _service;
 
   @override
-  Future<List<Comment>> getCommentList({required int postId}) =>
+  Future<List<CommentModel>> getCommentList({required int postId}) =>
       _service.getCommentList(postId: postId);
 }
 

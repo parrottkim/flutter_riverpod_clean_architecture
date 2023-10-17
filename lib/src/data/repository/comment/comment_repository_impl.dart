@@ -6,8 +6,10 @@ class CommentRepositoryImpl implements CommentRepository {
   final CommentDataSource _source;
 
   @override
-  Future<List<Comment>> getCommentList({required int postId}) =>
-      _source.getCommentList(postId: postId);
+  Future<List<CommentEntity>> getCommentList({required int postId}) async {
+    final list = await _source.getCommentList(postId: postId);
+    return list.map((element) => element.toEntity()).toList();
+  }
 }
 
 @riverpod

@@ -6,8 +6,10 @@ class UserRepositoryImpl implements UserRepository {
   final UserDataSource _source;
 
   @override
-  Future<User> getUserDetail({required int id}) =>
-      _source.getUserDetail(id: id);
+  Future<UserEntity> getUserDetail({required int id}) async {
+    final model = await _source.getUserDetail(id: id);
+    return model.toEntity();
+  }
 }
 
 @riverpod

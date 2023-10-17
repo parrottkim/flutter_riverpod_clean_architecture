@@ -19,13 +19,13 @@ class _CommentService implements CommentService {
   String? baseUrl;
 
   @override
-  Future<List<Comment>> getCommentList({required int postId}) async {
+  Future<List<CommentModel>> getCommentList({required int postId}) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{r'postId': postId};
     final _headers = <String, dynamic>{};
     final Map<String, dynamic>? _data = null;
-    final _result =
-        await _dio.fetch<List<dynamic>>(_setStreamType<List<Comment>>(Options(
+    final _result = await _dio
+        .fetch<List<dynamic>>(_setStreamType<List<CommentModel>>(Options(
       method: 'GET',
       headers: _headers,
       extra: _extra,
@@ -42,7 +42,7 @@ class _CommentService implements CommentService {
               baseUrl,
             ))));
     var value = _result.data!
-        .map((dynamic i) => Comment.fromJson(i as Map<String, dynamic>))
+        .map((dynamic i) => CommentModel.fromJson(i as Map<String, dynamic>))
         .toList();
     return value;
   }
@@ -91,7 +91,7 @@ class _PostService implements PostService {
   String? baseUrl;
 
   @override
-  Future<List<Post>> getPostList({
+  Future<List<PostModel>> getPostList({
     required int start,
     required int limit,
   }) async {
@@ -103,7 +103,7 @@ class _PostService implements PostService {
     final _headers = <String, dynamic>{};
     final Map<String, dynamic>? _data = null;
     final _result =
-        await _dio.fetch<List<dynamic>>(_setStreamType<List<Post>>(Options(
+        await _dio.fetch<List<dynamic>>(_setStreamType<List<PostModel>>(Options(
       method: 'GET',
       headers: _headers,
       extra: _extra,
@@ -120,19 +120,19 @@ class _PostService implements PostService {
               baseUrl,
             ))));
     var value = _result.data!
-        .map((dynamic i) => Post.fromJson(i as Map<String, dynamic>))
+        .map((dynamic i) => PostModel.fromJson(i as Map<String, dynamic>))
         .toList();
     return value;
   }
 
   @override
-  Future<Post> getPostDetail({required int id}) async {
+  Future<PostModel> getPostDetail({required int id}) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final Map<String, dynamic>? _data = null;
-    final _result =
-        await _dio.fetch<Map<String, dynamic>>(_setStreamType<Post>(Options(
+    final _result = await _dio
+        .fetch<Map<String, dynamic>>(_setStreamType<PostModel>(Options(
       method: 'GET',
       headers: _headers,
       extra: _extra,
@@ -148,7 +148,7 @@ class _PostService implements PostService {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    final value = Post.fromJson(_result.data!);
+    final value = PostModel.fromJson(_result.data!);
     return value;
   }
 
@@ -196,13 +196,13 @@ class _UserService implements UserService {
   String? baseUrl;
 
   @override
-  Future<User> getUserDetail({required int id}) async {
+  Future<UserModel> getUserDetail({required int id}) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final Map<String, dynamic>? _data = null;
-    final _result =
-        await _dio.fetch<Map<String, dynamic>>(_setStreamType<User>(Options(
+    final _result = await _dio
+        .fetch<Map<String, dynamic>>(_setStreamType<UserModel>(Options(
       method: 'GET',
       headers: _headers,
       extra: _extra,
@@ -218,7 +218,7 @@ class _UserService implements UserService {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    final value = User.fromJson(_result.data!);
+    final value = UserModel.fromJson(_result.data!);
     return value;
   }
 

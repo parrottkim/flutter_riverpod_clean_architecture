@@ -6,11 +6,12 @@ class PostDataSourceImpl implements PostDataSource {
   final PostService _service;
 
   @override
-  Future<List<Post>> getPostList({required int start, int limit = 20}) =>
+  Future<List<PostModel>> getPostList(
+          {required int start, int limit = 20}) async =>
       _service.getPostList(start: start, limit: limit);
 
   @override
-  Future<Post> getPostDetail({required int id}) =>
+  Future<PostModel> getPostDetail({required int id}) =>
       _service.getPostDetail(id: id);
 }
 
