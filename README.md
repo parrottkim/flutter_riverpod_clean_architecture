@@ -3,11 +3,11 @@
 Flutter project for implementing Clean Architecture with Riverpod and [JSONPlaceholder](https://jsonplaceholder.typicode.com/)
 
 ### Packages
-riverpod
-riverpod_generator
-freezed
-dio
-retrofit
+- riverpod
+- riverpod_generator
+- freezed
+- dio
+- retrofit
 
 ### Clean Architecture
 ![image](https://github.com/ParrottKim/flutter_riverpod_clean_architecture/assets/83802425/3540b26f-150e-4821-be91-68089f16b3ff)
